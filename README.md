@@ -46,4 +46,3 @@ export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 Implementing **GPU Acceleration of the Matrix-Free Interior Point Method**
 
 - [Original paper](https://link.springer.com/chapter/10.1007/978-3-642-31464-3_69)
-- [Overleaf for project report](https://www.overleaf.com/project/67a0d44096c84f5425307c91)
