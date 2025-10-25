@@ -1,0 +1,6 @@
+-I.
+-Isrc
+-Ilib
+-I/usr/local/cuda/include
+-I/home/masafumi/opt/gurobi1103/linux64/include
+-DUSE_GUROBI

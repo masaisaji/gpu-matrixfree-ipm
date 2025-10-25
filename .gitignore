@@ -1,0 +1,14 @@
+# ignore binary files first
+*
+!/**/
+!*.*
+!Makefile
+
+*.i
+*.ii
+*.gpu
+*.ptx
+*.cubin
+*.fatbin
+*.o
+*.log
