@@ -1,4 +1,7 @@
-# Prerequisites
+Implementing **a GPU accelerated matrix-free interior point method for LP**, originally proposed by E. Smith et al in
+> Smith, E., Gondzio, J., Hall, J. (2012). GPU Acceleration of the Matrix-Free Interior Point Method. In: Wyrzykowski, R., Dongarra, J., Karczewski, K., Waśniewski, J. (eds) Parallel Processing and Applied Mathematics. PPAM 2011. Lecture Notes in Computer Science, vol 7203. Springer, Berlin, Heidelberg. <https://doi.org/10.1007/978-3-642-31464-3_69>
+
+# Installation
 
 ## Dependencies
 
@@ -42,7 +45,3 @@ export CUDA_HOME=/path/to/cuda
 export PATH=$CUDA_HOME/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 ```
-
-Implementing **GPU Acceleration of the Matrix-Free Interior Point Method**
-
-- [Original paper](https://link.springer.com/chapter/10.1007/978-3-642-31464-3_69)
