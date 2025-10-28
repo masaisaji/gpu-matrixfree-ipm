@@ -14,10 +14,7 @@ $$
 $$
 
 # Installation
-
-## Dependencies
-
-1. Install [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads)
+1. Install [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads). This project assumes CUDA is installed in `/usr/local/cuda`, but a different path can be passed to `make` as an option like: `make CUDA_HOME=/path/to/cuda`.
 
 2. Install other dependencies:
 
@@ -39,22 +36,6 @@ sudo dnf install -y gcc gcc-c++ make lapack-devel lapacke-devel blas-devel
 sudo pacman -S base-devel lapack blas lapacke cuda
 ```
 
-## CUDA Environment Setup
-
-This project assumes CUDA is installed in:
-
-```sh
-/usr/local/cuda
-```
-
-If your CUDA installation is in a different location, set:
-
-```sh
-export CUDA_HOME=/path/to/cuda
-export PATH=$CUDA_HOME/bin:$PATH
-export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
-```
-
 # Example Usage
 ## GPU-Accelerated Implementation
 To build the executable, run
@@ -73,22 +54,28 @@ See [Suite Sparse website](https://www.cise.ufl.edu/research/sparse/matrices/Qap
 You may also define your own LP with $A$ matrix and $b, c$ vectors.
 
 ## Comparison/Validation with Gurobi
-To validate solutions and/or compare solve time, you can also solve problems with Gurobi (CPU only). To compile, run
+To validate solutions and/or compare solve time, you can also solve problems with Gurobi (CPU only).
+*Note that Gurobi needs to be installed and configured (e.g., PATH) to use this feature*.
+To compile, run
 ```sh
 make USE_GUROBI=1
 ```
-in the root directory. The executable can be found in `src/run_gurobi_test`. Use it as `src/run_gurobi_test <lp_instance_name>`.
+in the root directory. 
+If needed, Gurobi path can be passed explicitly here like: `make USE_GUROBI=1 GUROBI_HOME=/path/to/gurobi`.
+
+The executable can be found in `src/run_gurobi_test`. Use it as `src/run_gurobi_test <lp_instance_name>`.
 For example, to solve `nug07` with Gurobi, run
 
 ```sh
 src/run_gurobi_test nug07
 ```
 
-# References
-Additional references:
+## Additional references:
 > Gondzio, J. "Matrix-free interior point method". Comput Optim Appl 51, 457–480 (2012). https://doi.org/10.1007/s10589-010-9361-3
 
 > Bellavia, S., Gondzio, J., and Morini, B. “A Matrix-Free Preconditioner for Sparse
 Symmetric Positive Definite Systems and Least-Squares Problems”. In: SIAM Journal on Scientific
 Computing 35.1 (Jan. 2013), A192–A211. https://doi.org/10.1137/110840819.
 
+## Credits
+Other contributor(s): [ecrwrig4](https://github.com/ecwrig4)
